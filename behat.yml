@@ -1,0 +1,18 @@
+# behat.yml
+default:
+    extensions:
+        Behat\MinkExtension:
+          base_url:  'https://en.wikipedia.org'
+          sessions:
+            default:
+              goutte: ~
+    suites:
+        web_suite:
+          contexts:
+            - WebFeatureContext
+            - Behat\MinkExtension\Context\MinkContext
+          paths:    [ %paths.base%/features/web ]
+        ls_suite:
+          contexts:
+            - LsFeatureContext
+          paths:    [ %paths.base%/features/ls ]
